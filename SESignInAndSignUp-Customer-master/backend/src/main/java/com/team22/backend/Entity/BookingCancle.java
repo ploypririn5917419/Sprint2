@@ -32,7 +32,7 @@ public class BookingCancle {
     @NotNull(message="bookingCancleStatus must not be null to be valid")
     private String bookingCancleStatus; 
 
-    @NotNull(message="bookingCancleReasonbe null to be valid")
+    @NotNull(message="bookingCancleReason be null to be valid")
     @Pattern(regexp ="(เพราะ).+")
     @Size(min=8 ,max=20)
     private String bookingCancleReason; 

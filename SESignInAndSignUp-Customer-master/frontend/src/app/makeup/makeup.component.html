@@ -129,6 +129,11 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker touchUi #picker></mat-datepicker>
       </mat-form-field>
+
+        <p>กรุณาระบุงานที่ท่านจะไป เช่น งานแต่งงาน งานบวช</p>
+      <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="category" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
     </form>
 
     <p>กรุณาใส่ข้อมูลส่วนตัวของท่านให้ถูกต้อง</p>
@@ -159,9 +164,9 @@
         </mat-select>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <mat-select placeholder="Customer Address" [(ngModel)]="addressCustomer" name="addressCustomer">
-          <mat-option *ngFor="let Customer of Customers" [value]="Customer.addressCustomer">
-            {{Customer.addressCustomer}}
+        <mat-select placeholder="Customer Address" [(ngModel)]="customerAddress" name="customerAddress">
+          <mat-option *ngFor="let Customer of Customers" [value]="Customer.customerAddress">
+            {{Customer.customerAddress}}
           </mat-option>
         </mat-select>
       </mat-form-field>

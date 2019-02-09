@@ -63,9 +63,7 @@ export class CancleComponent implements OnInit {
   ngOnInit() {
     this.cancleservice.getBookingCancle().subscribe(data => {
       this.BookingCancles = data;
-      this.BookingCancle = data;
       console.log(this.BookingCancles);
-      console.log(this.BookingCancle);
     });
     this.cancleservice.getBookingCancle().subscribe(data => {
       this.BookingCancle = data;
@@ -83,22 +81,22 @@ export class CancleComponent implements OnInit {
 
 
   OK() {
-        this.httpClient.post('http://localhost:8080/bookingCancle/' +
-        this.views.selectBookingId + '/' +
-        this.bookingCancleReason + '/' +
-        this.typeReasonName, this.BookingCancles)
-        .subscribe(
-          data => {
-            console.log('POST Request is successful', data);
-            this.snackBar.open('input detail ', 'ยกเลิกการจองสำเร็จ', {
-            });
-          },
-          error => {
-            this.snackBar.open('input detail ', 'ยกเลิกการจองไม่สำเร็จ', {
-            });
-            console.log('Error', error);
-          });
-  }
+    this.httpClient.post('http://localhost:8080/bookingCancle/' +
+    this.views.selectBookingId + '/' +
+    this.bookingCancleReason + '/' +
+    this.typeReasonName, this.BookingCancles)
+    .subscribe(
+      data => {
+        console.log('POST Request is successful', data);
+        this.snackBar.open('input detail ', 'ยกเลิกการจองสำเร็จ', {
+        });
+      },
+      error => {
+        this.snackBar.open('input detail ', 'ยกเลิกการจองไม่สำเร็จ', {
+        });
+        console.log('Error', error);
+      });
+}
 UPDATE() { this.httpClient.put('http://localhost:8080/cancleStatus/' + this.bookingCancleID + '/' +
 this.views.selectBookingId + '/' + 'Cancled', this.BookingCancles)
           .subscribe(
